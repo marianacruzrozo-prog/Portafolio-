@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mariana Cruz · Diseñadora Multimedia</title>
+    <meta name="description" content="Portafolio profesional de Mariana Cruz — Diseñadora Multimedia en Bogotá." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cur-dot" id="cursorDot"></div>
+    <div class="cur-ring" id="cursorRing"></div>
+
+    <!-- ================================================================
+     NAVEGACIÓN
+     ================================================================ -->
+    <nav class="nav" id="mainNav">
+        <img src="img/logo arriba.png" alt="Mariana Cruz" class="logo"
+            style=" animation: float 4s ease-in-out infinite;">
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre">Sobre mí</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#habilidades">Skills</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#contacto" class="btn-nav">Trabajemos juntas</a>
+        </div>
+        <div class="nav-hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <nav class="nav-mobile" id="navMobile">
+        <a href="#inicio" onclick="closeMobile()">Inicio</a>
+        <a href="#sobre" onclick="closeMobile()">Sobre mí</a>
+        <a href="#servicios" onclick="closeMobile()">Servicios</a>
+        <a href="#habilidades" onclick="closeMobile()">Skills</a>
+        <a href="#portafolio" onclick="closeMobile()">Portafolio</a>
+        <a href="#contacto" onclick="closeMobile()">Contacto</a>
+    </nav>
+
+    <!-- ================================================================
+     HERO
+     ================================================================ -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+            <div class="eyebrow">
+                <span class="eyebrow-dash"></span>
+                <span class="eyebrow-text">Producción Multimedia · Colombia</span>
+            </div>
+            <h1 class="hero-name">Mariana</h1>
+            <span class="hero-name-sub">Cruz Rozo</span>
+            <div class="hero-tags">
+                <span class="hero-tag">Web</span>
+                <span class="hero-tag">Video</span>
+                <span class="hero-tag">Foto</span>
+                <span class="hero-tag">Diseño</span>
+                <span class="hero-tag">Publicidad</span>
+            </div>
+
+            <p class="hero-sub">Creo experiencias digitales completas desde el código hasta el contenido visual. Fusiono
+                lógica y creatividad para construir proyectos que realmente impactan. Cada píxel
+                cuenta.</p>
+            <div class="hero-actions">
+                <a href="#portafolio" class="btn-primary">
+                    Ver proyectos
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="#contacto" class="btn-ghost">Hablemos →</a>
+            </div>
+        </div>
+        <!-- IMAGEN -->
+        <div class="about-left">
+            <div class="about-img-wrap">
+
+                <div class="about-img-box">
+                    <img src="img/Foto perfil.JPG" alt="Mariana Cruz">
+                </div>
+
+                <div class="about-img-frame"></div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="mq">
+        <div class="mq-track">
+            <div class="mq-item"><span class="mq-dot"></span>Programación Web</div>
+            <div class="mq-item"><span class="mq-dot"></span>Edición de Video</div>
+            <div class="mq-item"><span class="mq-dot"></span>Fotografía</div>
+            <div class="mq-item"><span class="mq-dot"></span>Diseño Digital</div>
+            <div class="mq-item"><span class="mq-dot"></span>Publicidad</div>
+            <div class="mq-item"><span class="mq-dot"></span>Programación Web</div>
+            <div class="mq-item"><span class="mq-dot"></span>Edición de Video</div>
+            <div class="mq-item"><span class="mq-dot"></span>Fotografía</div>
+            <div class="mq-item"><span class="mq-dot"></span>Diseño Digital</div>
+            <div class="mq-item"><span class="mq-dot"></span>Publicidad</div>
+            <div class="mq-item"><span class="mq-dot"></span>Programación Web</div>
+            <div class="mq-item"><span class="mq-dot"></span>Edición de Video</div>
+            <div class="mq-item"><span class="mq-dot"></span>Fotografía</div>
+            <div class="mq-item"><span class="mq-dot"></span>Diseño Digital</div>
+            <div class="mq-item"><span class="mq-dot"></span>Publicidad</div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+     SOBRE MÍ
+     ================================================================ -->
+    <section class="about" id="sobre">
+        <div class="about-grid">
+            <!-- Izquierda: imagen + tarjeta info -->
+            <div class="about-left reveal">
+                <div class="about-img-wrap">
+                    <div class="about-img-box">
+                        <img src="img/Foto perfil.JPG" alt="Mariana Cruz">
+                        <div class="about-img-ph">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#1341A2" stroke-width="1.2" width="36"
+                                height="36">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="about-img-frame"></div>
+                </div>
+
+                <!-- Info bajo la imagen -->
+                <div class="about-img-meta">
+                    <div class="about-img-meta-name">Mariana Cruz Rozo</div>
+                    <div class="about-img-meta-role">Diseñadora Multimedia</div>
+
+                    <div class="about-img-meta-row">
+                        <div class="about-meta-item">
+                            <span class="about-meta-num">5+</span>
+                            <span class="about-meta-lbl">Disciplinas</span>
+                        </div>
+
+                        <div class="about-meta-sep"></div>
+
+                        <div class="about-meta-item">
+                            <span class="about-meta-num">100%</span>
+                            <span class="about-meta-lbl">dedicacion Creativa</span>
+                        </div>
+
+                        <div class="about-meta-sep"></div>
+
+                        <div class="about-meta-item">
+                            <span class="about-meta-num">∞</span>
+                            <span class="about-meta-lbl">Ideas por explorar</span>
+                        </div>
+                    </div>
+
+                    <div class="about-location">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Bogotá, Colombia · Producción Multimedia
+                    </div>
+                </div>
+            </div>
+
+            <!-- Derecha: texto -->
+            <div class="about-right">
+                <div class="sec-label reveal">Sobre mí</div>
+
+                <h2 class="sec-title reveal" style="margin-bottom:1.75rem">
+                    Una mente que <em>piensa en</em><br /> píxeles y lógica
+                </h2>
+
+                <div class="about-text">
+                    <p class="reveal reveal-d1">
+                        Hola, soy <strong>Mariana</strong>. Estudio Producción Multimedia y tengo 18 años.
+                        Me encuentro ubicada en Bogotá, Colombia, creando proyectos que fusionan lo visual con lo
+                        técnico.
+                    </p>
+
+                    <p class="reveal reveal-d2">
+                        Mi trabajo se enfoca en la <strong>programación web, edición de video,
+                            fotografía, diseño digital y publicidad</strong>, integrando lo creativo con lo técnico
+                        para desarrollar proyectos visuales atractivos, funcionales y con propósito.
+                    </p>
+
+                    <p class="reveal reveal-d3">
+                        Disfruto el aprendizaje constante y los nuevos desafíos que me impulsan
+                        a crecer tanto a nivel personal como profesional. Mi objetivo es seguir evolucionando,
+                        construyendo propuestas que reflejen mi creatividad y proyección dentro del mundo multimedia.
+                    </p>
+                </div>
+    </section>
+    <!-- ================================================================
+     SERVICIOS
+     ================================================================ -->
+    <section class="services" id="servicios">
+        <div class="services-inner">
+            <div class="services-header reveal">
+                <div class="sec-label">— Servicios</div>
+                <h2 class="sec-title">Lo que puedo crear<br /><em>para ti</em></h2>
+            </div>
+            <div class="services-grid">
+                <div class="svc-card reveal">
+                    <div class="svc-num">01</div>
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Programación Web</h3>
+                    <p>Desarrollo de sitios web funcionales y atractivos, optimizados para todos los dispositivos.</p>
+                    <div class="svc-chips"><span class="svc-chip">HTML</span><span class="svc-chip">CSS</span><span
+                            class="svc-chip">JavaScript</span><span class="svc-chip">Responsive</span></div>
+                    <div class="svc-arrow">→</div>
+                </div>
+                <div class="svc-card reveal reveal-d1">
+                    <div class="svc-num">02</div>
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Edición de Video</h3>
+                    <p>Producción y edición de contenido audiovisual con narrativa visual poderosa y color grading.</p>
+                    <div class="svc-chips"><span class="svc-chip">Premiere Pro</span><span class="svc-chip">After
+                            Effects</span><span class="svc-chip">CapCut</span></div>
+                    <div class="svc-arrow">→</div>
+                </div>
+                <div class="svc-card reveal reveal-d2">
+                    <div class="svc-num">03</div>
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                            <circle cx="12" cy="13" r="4" />
+                        </svg>
+                    </div>
+                    <h3>Fotografía</h3>
+                    <p>Captura y retoque profesional de retratos y productos con ojo artístico y edición avanzada.</p>
+                    <div class="svc-chips"><span class="svc-chip">Retrato</span><span
+                            class="svc-chip">Producto</span><span class="svc-chip">Photoshop</span></div>
+                    <div class="svc-arrow">→</div>
+                </div>
+            </div>
+            <div class="svc-row2">
+                <div class="svc-card reveal">
+                    <div class="svc-num">04</div>
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3>Diseño Digital</h3>
+                    <p>Identidad visual, UI y piezas gráficas que comunican con claridad y estilo diferenciador.</p>
+                    <div class="svc-chips"><span class="svc-chip">Illustrator</span><span class="svc-chip">Canva</span>
+                    </div>
+                    <div class="svc-arrow">→</div>
+                </div>
+                <div class="svc-card reveal reveal-d1">
+                    <div class="svc-num">05</div>
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3>Publicidad</h3>
+                    <p>Estrategia de contenido y campañas para redes sociales con enfoque en resultados reales.</p>
+                    <div class="svc-chips"><span class="svc-chip">Social Media</span><span class="svc-chip">Adobe
+                            express</span><span class="svc-chip">Estrategia</span></div>
+                    <div class="svc-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     HABILIDADES
+     ================================================================ -->
+    <section class="skills" id="habilidades">
+        <div class="skills-inner">
+            <div class="sec-label reveal">Habilidades</div>
+            <h2 class="sec-title reveal">Herramientas<br /><em>que domino</em></h2>
+            <div class="skills-grid">
+                <div class="sk-item reveal">
+                    <div class="sk-row"><span class="sk-name">HTML / CSS</span><span class="sk-pct">95%</span></div>
+                    <div class="sk-bar">
+                        <div class="sk-fill" style="--p:95%"></div>
+                    </div>
+                </div>
+                <div class="sk-item reveal reveal-d1">
+                    <div class="sk-row"><span class="sk-name">Illustrator / Figma</span><span class="sk-pct">95%</span>
+                    </div>
+                    <div class="sk-bar">
+                        <div class="sk-fill" style="--p:95%"></div>
+                    </div>
+                </div>
+                <div class="sk-item reveal">
+                    <div class="sk-row"><span class="sk-name">Premiere Pro</span><span class="sk-pct">88%</span></div>
+                    <div class="sk-bar">
+                        <div class="sk-fill" style="--p:88%"></div>
+                    </div>
+                </div>
+                <div class="sk-item reveal reveal-d1">
+                    <div class="sk-row"><span class="sk-name">Photoshop / Lightroom</span><span
+                            class="sk-pct">88%</span></div>
+                    <div class="sk-bar">
+                        <div class="sk-fill" style="--p:88%"></div>
+                    </div>
+                </div>
+                <div class="sk-item reveal">
+                    <div class="sk-row"><span class="sk-name">JavaScript</span><span class="sk-pct">75%</span></div>
+                    <div class="sk-bar">
+                        <div class="sk-fill" style="--p:75%"></div>
+                    </div>
+                </div>
+                <div class="sk-item reveal reveal-d1">
+                    <div class="sk-row"><span class="sk-name">After Effects</span><span class="sk-pct">70%</span></div>
+                    <div class="sk-bar">
+                        <div class="sk-fill" style="--p:70%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     PORTAFOLIO
+     ================================================================ -->
+    <section class="portfolio" id="portafolio">
+        <div class="port-header reveal">
+            <div class="sec-label">Mi Portafolio</div>
+            <h2 class="sec-title">Proyectos que <em>hablan</em><br />por sí solos</h2>
+            <p class="port-subtitle">Algunos de mis trabajos recientes</p>
+        </div>
+
+
+
+        <div class="port-grid">
+
+            <!-- Proyecto -->
+            <div class="proj-card" data-cat="web">
+                <div class="proj-bg">
+                    <div class="proj-bg-ph" style="background:linear-gradient(135deg,#ffffff)">
+                        <span class="proj-cat">Programación Web</span>
+                    </div>
+                </div>
+
+                <div class="proj-content">
+
+                    <a href="proyecto_1.html" class="proj-btn">Ver proyecto →</a>
+                </div>
+
+                <span class="proj-num">01</span>
+            </div>
+
+            <!-- Proyecto -->
+            <div class="proj-card" data-cat="video">
+                <div class="proj-bg">
+                    <div class="proj-bg-ph" style="background:linear-gradient(135deg,#ffffff)">
+                        <span class="proj-cat">Edición de Video</span>
+                    </div>
+                </div>
+
+                <div class="proj-content">
+
+                    <a href="proyecto_2.html" class="proj-btn">Ver proyecto →</a>
+                </div>
+
+                <span class="proj-num">02</span>
+            </div>
+
+            <!-- Proyecto -->
+            <div class="proj-card" data-cat="foto">
+                <div class="proj-bg">
+                    <div class="proj-bg-ph" style="background:linear-gradient(135deg,#ffffff)">
+                        <span class="proj-cat">Fotografía</span>
+                    </div>
+                </div>
+
+                <div class="proj-content">
+
+                    <a href="proyecto_3.html" class="proj-btn">Ver proyecto →</a>
+                </div>
+
+                <span class="proj-num">03</span>
+            </div>
+
+            <!-- Proyecto -->
+            <div class="proj-card" data-cat="diseño">
+                <div class="proj-bg">
+                    <div class="proj-bg-ph" style="background:linear-gradient(135deg,#ffffff)">
+                        <span class="proj-cat">Diseño Digital</span>
+                    </div>
+                </div>
+
+                <div class="proj-content">
+
+                    <a href="proyecto_4.html" class="proj-btn">Ver proyecto →</a>
+                </div>
+
+                <span class="proj-num">04</span>
+            </div>
+
+            <!-- Proyecto -->
+            <div class="proj-card" data-cat="pub">
+                <div class="proj-bg">
+                    <div class="proj-bg-ph" style="background:linear-gradient(135deg,#ffffff)">
+                        <span class="proj-cat">Publicidad</span>
+                    </div>
+                </div>
+
+                <div class="proj-content">
+
+                    <a href="proyecto_5.html" class="proj-btn">Ver proyecto →</a>
+                </div>
+
+                <span class="proj-num">05</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================
+     CONTACTO
+     ================================================================ -->
+    <section class="contact" id="contacto">
+        <div class="contact-grid">
+            <!-- Izquierda -->
+            <div class="contact-left">
+                <div class="sec-label reveal"> Contacto</div>
+                <h2 class="contact-title reveal">¿Creamos algo<br /><em>juntos?</em></h2>
+                <p class="contact-sub reveal">Disponible para proyectos, colaboraciones creativas y
+                    oportunidades de trabajo. ¡Hablemos!</p>
+                <div class="contact-items reveal">
+                    <a href="mailto:marianacruzrozo@email.com" class="c-item">
+                        <div class="c-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="c-type">Email</span>
+                            <span class="c-val">marianacruzrozo@gmail.com</span>
+                        </div>
+                        <div class="c-arrow">↗</div>
+                    </a>
+                    <a href="https://instagram.com/marianacr_25" target="_blank" rel="noopener" class="c-item">
+                        <div class="c-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="c-type">Instagram</span>
+                            <span class="c-val">@marianacr_25</span>
+                        </div>
+                        <div class="c-arrow">↗</div>
+                    </a>
+                </div>
+                <!-- WhatsApp CTA -->
+                <a href="https://wa.me/573138049847?text=Hola%20Mariana%2C%20me%20gustar%C3%ADa%20trabajar%20contigo%20%F0%9F%8C%9F"
+                    target="_blank" rel="noopener" class="btn-wa reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                    </svg>
+                    Escribir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Derecha: formulario -->
+            <div class="contact-form-wrap reveal reveal-d2">
+                <div class="form-title">Envíame un mensaje</div>
+                <div class="form-sub">Cuéntame sobre tu proyecto y te responderé pronto.</div>
+                <form id="contactForm" onsubmit="handleForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">Nombre</label>
+                            <input type="text" id="fname" name="nombre" placeholder="Tu nombre" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="femail">Correo</label>
+                            <input type="email" id="femail" name="correo" placeholder="tu@correo.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fsubject">Asunto</label>
+                        <input type="text" id="fsubject" name="asunto" placeholder="¿En qué te puedo ayudar?" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fmsg">Mensaje</label>
+                        <textarea id="fmsg" name="mensaje" placeholder="Cuéntame sobre tu proyecto…"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                        Enviar mensaje
+                    </button>
+                    <p class="form-note" id="formNote">Te responderé en menos de 24 horas ✦</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+     FOOTER
+     ================================================================ -->
+    <footer class="footer">
+        <p>© 2025 Mariana · Hecho con <span class="heart">♥</span> desde Bogotá</p>
+        <p class="footer-note">Producción Multimedia · Colombia</p>
+    </footer>
+
+
+    <!-- ================================================================
+     JAVASCRIPT
+     ================================================================ -->
+    <script>
+        /* ── Cursor ── */
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        document.addEventListener('mousemove', e => {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            ring.style.left = e.clientX + 'px';
+            ring.style.top = e.clientY + 'px';
+        });
+
+        /* ── Nav scroll ── */
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        /* ── Hamburger ── */
+        const hamburger = document.getElementById('hamburger');
+        const navMobile = document.getElementById('navMobile');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navMobile.classList.toggle('open');
+        });
+        function closeMobile() {
+            hamburger.classList.remove('open');
+            navMobile.classList.remove('open');
+        }
+
+        /* ── Scroll reveal ── */
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+        revealEls.forEach(el => revealObs.observe(el));
+
+        /* ── Filtros portafolio ── */
+        document.querySelectorAll('.f-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.proj-card').forEach(card => {
+                    const show = filter === 'all' || card.dataset.cat === filter;
+                    card.style.display = show ? '' : 'none';
+                    if (show) {
+                        card.style.animation = 'none';
+                        void card.offsetWidth;
+                        card.style.animation = '';
+                    }
+                });
+            });
+        });
+
+        /* ── Modal de proyectos ── */
+        const backdrop = document.getElementById('modalBackdrop');
+        const modal = document.getElementById('projModal');
+        const mClose = document.getElementById('modalClose');
+        const mCloseBtn = document.getElementById('modalCloseBtn');
+
+        function openModal(card) {
+            document.getElementById('modalCat').textContent = card.dataset.category || '';
+            document.getElementById('modalTitle').textContent = card.dataset.title || '';
+            document.getElementById('modalDesc').textContent = card.dataset.desc || '';
+            // Chips
+            const chipsEl = document.getElementById('modalChips');
+            chipsEl.innerHTML = '';
+            (card.dataset.chips || '').split(',').forEach(chip => {
+                const s = document.createElement('span');
+                s.className = 'modal-chip';
+                s.textContent = chip.trim();
+                chipsEl.appendChild(s);
+            });
+            backdrop.classList.add('open');
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            backdrop.classList.remove('open');
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.proj-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                openModal(btn.closest('.proj-card'));
+            });
+        });
+        document.querySelectorAll('.proj-card').forEach(card => {
+            card.addEventListener('click', () => openModal(card));
+        });
+        mClose.addEventListener('click', closeModal);
+        mCloseBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        /* ── Formulario ── */
+        function handleForm(e) {
+            e.preventDefault();
+            const note = document.getElementById('formNote');
+            const btn = e.target.querySelector('.btn-submit');
+            btn.textContent = '¡Enviando…';
+            setTimeout(() => {
+                btn.textContent = '¡Mensaje enviado! ✓';
+                note.textContent = '¡Gracias! Te responderé muy pronto 🎉';
+                note.style.color = '#4CAF50';
+                e.target.reset();
+                setTimeout(() => {
+                    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Enviar mensaje';
+                    note.textContent = 'Te responderé en menos de 24 horas ✦';
+                    note.style.color = '';
+                }, 4000);
+            }, 1200);
+        }
+    </script>
+</body>
+
+</html>
