@@ -93,6 +93,129 @@ button {
     background: none
 }
 
+/* ================================================================
+   SISTEMA DE GRID DE 12 COLUMNAS
+   ================================================================ */
+
+/* Contenedor principal del grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Clases de columnas — Desktop (12 columnas) */
+.col-1 {
+    grid-column: span 1;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-5 {
+    grid-column: span 5;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.col-7 {
+    grid-column: span 7;
+}
+
+.col-8 {
+    grid-column: span 8;
+}
+
+.col-9 {
+    grid-column: span 9;
+}
+
+.col-10 {
+    grid-column: span 10;
+}
+
+.col-11 {
+    grid-column: span 11;
+}
+
+.col-12 {
+    grid-column: span 12;
+}
+
+/* Alineación dentro del grid */
+.col-center {
+    justify-self: center;
+}
+
+.col-end {
+    justify-self: end;
+}
+
+/* ── Tablet (max-width: 1024px) ── */
+@media (max-width: 1024px) {
+    .grid-container {
+        gap: 1.25rem;
+    }
+
+    /* En tablet, col-6 pasa a 12 para que el texto ocupe full width */
+    .col-6 {
+        grid-column: span 12;
+    }
+
+    .col-7 {
+        grid-column: span 12;
+    }
+
+    .col-8 {
+        grid-column: span 12;
+    }
+
+    /* Elementos secundarios pueden ser 6 en tablet */
+    .col-4 {
+        grid-column: span 6;
+    }
+
+    .col-3 {
+        grid-column: span 6;
+    }
+}
+
+/* ── Celular (max-width: 600px) ── */
+@media (max-width: 600px) {
+    .grid-container {
+        gap: 1rem;
+    }
+
+    /* En móvil todo ocupa 12 columnas */
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-10,
+    .col-11 {
+        grid-column: span 12;
+    }
+}
+
 /* ── Custom cursor ── */
 .cur-dot {
     width: 7px;
@@ -319,41 +442,60 @@ button {
 /* ================================================================
    HERO
    ================================================================ */
+.hero {
+    min-height: 100vh;
+
+    /* IMAGEN BORDE + GRADIENTE */
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 130px 5vw 80px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* Contenido hero: 6 columnas izquierda */
+.hero-content {
+    grid-column: span 6;
+    z-index: 1;
+}
+
+/* Imagen hero: 6 columnas derecha */
+.hero .about-left {
+    grid-column: span 6;
+    z-index: 1;
+}
+
+
 
 /* MARIPOSA */
-/* CONTENEDOR */
 .hero .about-img-wrap {
     position: relative;
     z-index: 1;
     overflow: visible;
-    /* 👈 IMPORTANTE: evita que se corte */
+
 }
 
 /* IMAGEN PRINCIPAL */
 .hero .about-img-wrap img {
     position: relative;
     z-index: 2;
-    /* 👈 encima de la mariposa */
+
 }
 
 /* MARIPOSA */
 .hero .about-img-wrap::before {
     content: '';
     position: absolute;
-
     width: 300px;
-    /* 👈 tamaño grande */
     height: 300px;
-
     background: url("img/mariposa_foto.png") no-repeat center/contain;
-
     top: -180px;
-    /* 👈 súbela */
     right: -200px;
-    /* 👈 muévela hacia afuera */
-
     z-index: -1;
-    /* 👈 detrás */
     animation: float 4s ease-in-out infinite;
 }
 
@@ -372,17 +514,7 @@ button {
     }
 }
 
-.hero {
-    min-height: 100vh;
-    background: var(--grad-cream);
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    align-items: center;
-    gap: 4rem;
-    padding: 130px 5vw 80px;
-    position: relative;
-    overflow: hidden
-}
+
 
 .hero::before {
     content: '';
@@ -400,6 +532,19 @@ button {
     width: 1px;
     background: linear-gradient(to bottom, transparent, rgba(57, 187, 237, .18), transparent);
     pointer-events: none
+}
+
+/* LINEAS */
+.hero .about-img-wrap::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url("img/mariposa_foto.png") no-repeat center/contain;
+    top: -180px;
+    right: -200px;
+    z-index: -1;
+    animation: float 4s ease-in-out infinite;
 }
 
 /* Eyebrow */
@@ -689,6 +834,12 @@ button {
 }
 
 /* ── Hero image decorative elements ── */
+/* hero-content position in grid handled by col-6 class */
+.hero-content {
+    min-width: 0;
+    /* prevent overflow in grid */
+}
+
 .hero .about-left {
     position: relative;
 }
@@ -742,6 +893,8 @@ button {
     position: relative;
     overflow: hidden;
     /* importante */
+
+    transform: translateY(-50px);
 }
 
 .mq::before,
@@ -763,7 +916,6 @@ button {
 /* DERECHA */
 .mq::after {
     right: 0;
-    background: linear-gradient(to right, #1341A2, transparent);
 }
 
 .mq-track {
@@ -806,7 +958,9 @@ button {
 /* ================================================================
    SECCIONES COMUNES
    ================================================================ */
-section {
+
+.section {
+
     position: relative
 }
 
@@ -875,10 +1029,25 @@ section {
 /* ================================================================
    SOBRE MÍ
    ================================================================ */
+
 .about {
     padding: 120px 5vw;
-    background: #FFFFFF;
+    min-height: 100vh;
     position: relative;
+
+}
+
+.about::after {
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;
+    /* controlas tamaño real */
+    height: 500px;
+
+
 }
 
 .about::before {
@@ -895,11 +1064,21 @@ section {
 
 .about-grid {
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 6rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
     align-items: start;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Imagen ocupa 5 columnas, texto 7 columnas */
+.about-grid .about-left {
+    grid-column: span 5;
+}
+
+.about-grid .about-right {
+    grid-column: span 7;
+    padding-left: 2rem;
 }
 
 /* 🔥 FIX AQUÍ */
@@ -942,7 +1121,7 @@ section {
 }
 
 .about-img-ph {
-    width: 100%;
+    width: .+00%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -960,6 +1139,17 @@ section {
     border-radius: 24px;
     top: 16px;
     left: -16px;
+    z-index: -1;
+}
+
+.about-img-frame-derecha {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid rgba(57, 187, 237, .22);
+    border-radius: 24px;
+    top: 16px;
+    right: -16px;
     z-index: -1;
 }
 
@@ -1067,6 +1257,26 @@ section {
     /* 👈 encima de la mariposa */
 }
 
+/* MARIPOSA */
+.about-img-wrap::before {
+    content: '';
+    position: absolute;
+
+    width: 300px;
+    /* 👈 tamaño grande */
+    height: 300px;
+
+    background: url("img/mariposa_foto-derecha.png") no-repeat center/contain;
+
+    top: -180px;
+    /* 👈 súbela */
+    right: 200px;
+    /* 👈 muévela hacia afuera */
+
+    z-index: -10;
+    /* 👈 detrás */
+    animation: float 4s ease-in-out infinite;
+}
 
 
 /* ================================================================
@@ -1098,8 +1308,12 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 1.4rem
+}
+
+.services-grid .svc-card {
+    grid-column: span 4;
 }
 
 /* Cards — todos mismo color base, hover = vino */
@@ -1239,12 +1453,16 @@ section {
 /* Fila de 2 centrada */
 .svc-row2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 1.4rem;
     margin-top: 1.4rem;
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto
+}
+
+.svc-row2 .svc-card {
+    grid-column: span 6;
 }
 
 /* ================================================================
@@ -1307,8 +1525,12 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem 6rem
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem 4rem
+}
+
+.skills-grid .sk-item {
+    grid-column: span 6;
 }
 
 .sk-row {
@@ -1382,16 +1604,18 @@ section {
 }
 
 /* ================================================================
-   MI PORTAFOLIO
+   MI PORTAFOLIO — SLIDER POR CATEGORÍA
    ================================================================ */
 .portfolio {
-    padding: 120px 5vw;
+    padding: 120px 0 140px;
     background: white;
+    overflow: hidden;
 }
 
 .port-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    padding: 0 5vw;
 }
 
 .port-subtitle {
@@ -1401,163 +1625,377 @@ section {
     font-weight: 300;
 }
 
-/* Filtros */
-.port-filters {
-    display: flex;
-    justify-content: center;
-    gap: .65rem;
-    flex-wrap: wrap;
-    margin-bottom: 3.5rem;
+/* ── Categoría wrapper ── */
+.port-category {
+    margin-bottom: 4.5rem;
 }
 
-.f-btn {
+.port-category:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Cabecera de categoría ── */
+.port-cat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    margin-bottom: 1.6rem;
+}
+
+.port-cat-label {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.port-cat-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--wine-pale);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wine);
+    flex-shrink: 0;
+}
+
+.port-cat-icon--video {
+    background: rgba(62, 133, 193, .12);
+    color: var(--blue-mid);
+}
+
+.port-cat-icon--foto {
+    background: rgba(57, 187, 237, .12);
+    color: var(--blue-light);
+}
+
+.port-cat-name {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -.025em;
+}
+
+.port-cat-count {
     font-size: .7rem;
     font-weight: 500;
-    letter-spacing: .08em;
+    color: var(--muted);
+    letter-spacing: .06em;
     text-transform: uppercase;
-    color: var(--mid);
     background: var(--off-white);
-    padding: 8px 20px;
+    padding: 4px 12px;
     border-radius: var(--r-full);
-    cursor: pointer;
-    transition: .3s;
 }
 
-.f-btn:hover,
-.f-btn.active {
+/* Nav buttons */
+.port-cat-nav {
+    display: flex;
+    gap: .5rem;
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(19, 65, 162, .2);
+    background: white;
+    color: var(--wine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .25s, border-color .25s, transform .2s var(--spring), box-shadow .25s;
+}
+
+.swiper-btn-prev:hover,
+.swiper-btn-next:hover {
     background: var(--wine);
     color: white;
-    transform: translateY(-2px);
+    border-color: var(--wine);
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(19, 65, 162, .28);
 }
 
-/* GRID */
-.port-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.8rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.swiper-btn-prev.swiper-button-disabled,
+.swiper-btn-next.swiper-button-disabled {
+    opacity: .3;
+    cursor: not-allowed;
 }
 
-/* CARD BASE (igual que servicios) */
-.proj-card {
-    position: relative;
-    border-radius: var(--r-lg);
+/* ── Swiper container ── */
+.port-swiper {
+    padding: 0 5vw 2.5rem !important;
+    overflow: visible !important;
+}
+
+.port-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+/* Narrow slide for vertical video cards */
+.swiper-slide--narrow {
+    width: 220px !important;
+}
+
+/* ── CARD BASE ── */
+.pf-card {
+    border-radius: 20px;
     overflow: hidden;
-    aspect-ratio: 4/3;
     background: white;
-    border: 1px solid rgba(19, 65, 162, .06);
+    border: 1px solid rgba(19, 65, 162, .07);
     box-shadow: var(--sh-xs);
+    transition: transform .38s var(--spring), box-shadow .38s, border-color .3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-
-    transition: transform .38s var(--spring),
-        box-shadow .38s,
-        background .38s,
-        border-color .38s;
 }
 
-/* Hover igual que servicios */
-.proj-card:hover {
+.pf-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--sh-md);
-    border-color: transparent;
+    border-color: rgba(19, 65, 162, .15);
 }
 
-/* capa vino elegante */
-.proj-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--grad-wine);
-    opacity: 0;
-    transition: opacity .35s;
+/* Horizontal card (web, photo, horizontal video) */
+.pf-card--horizontal .pf-card-media {
+    aspect-ratio: 16 / 10;
+    position: relative;
+    flex-shrink: 0;
+     width: 100%;
+    height: 330px;
+    overflow: hidden;
 }
 
-.proj-card:hover::after {
-    opacity: 1;
+
+/* Vertical card (reels) */
+.pf-card--vertical .pf-card-media {
+    aspect-ratio: 9 / 16;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
-/* Fondo */
-.proj-bg {
-    width: 100%;
-    height: 100%;
-    transition: transform .5s var(--ease);
-}
-
-.proj-card:hover .proj-bg {
-    transform: scale(1.05) rotate(-1deg);
-}
-
-.proj-bg-ph {
+/* ── Media placeholder ── */
+.pf-media-ph {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: .25;
+    transition: transform .5s var(--ease);
 }
 
-.proj-bg-ph span {
-    font-size: .7rem;
-    text-transform: uppercase;
-    color: var(--mid);
+.pf-card:hover .pf-media-ph {
+    transform: scale(1.05);
 }
 
-/* CONTENIDO */
-.proj-content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1.5rem;
-    z-index: 2;
+/* Color themes per category */
+.pf-ph--web1 {
+    background: linear-gradient(135deg, #e8f0fe 0%, #c5d5fb 100%);
+    color: #1341A2;
 }
 
-/* categoría */
-.proj-cat {
-    font-size: .65rem;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--wine);
-    margin-bottom: .6rem;
-    transition: color .3s;
+.pf-ph--web2 {
+    background: linear-gradient(135deg, #dce8ff 0%, #b8ccf5 100%);
+    color: #1E3A6E;
 }
 
-/* botón */
-.proj-btn {
-    font-size: .72rem;
-    font-weight: 600;
-    color: var(--wine);
-    border: 1px solid var(--wine);
-    padding: 6px 14px;
-    border-radius: var(--r-full);
-    width: fit-content;
-    transition: .3s;
+.pf-ph--web3 {
+    background: linear-gradient(135deg, #e3edff 0%, #c2d6f8 100%);
+    color: #3E85C1;
 }
 
-/* número */
-.proj-num {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: .75rem;
-    color: var(--muted);
-    z-index: 2;
+.pf-ph--web4 {
+    background: linear-gradient(135deg, #d8e9ff 0%, #a9c8f0 100%);
+    color: #1341A2;
 }
 
-/* HOVER TEXTO BLANCO (CLAVE) */
-.proj-card:hover .proj-cat,
-.proj-card:hover .proj-btn,
-.proj-card:hover .proj-bg-ph span,
-.proj-card:hover .proj-num {
+.pf-ph--vid1 {
+    background: linear-gradient(160deg, #0a1628 0%, #1E3A6E 60%, #3E85C1 100%);
     color: white;
 }
 
-.proj-card:hover .proj-btn {
-    border-color: rgba(255, 255, 255, .4);
-    background: rgba(255, 255, 255, .1);
+.pf-ph--vid2 {
+    background: linear-gradient(135deg, #0d2240 0%, #1341A2 100%);
+    color: white;
+}
+sss
+.pf-ph--vid3 {
+    background: linear-gradient(160deg, #05111f 0%, #0f2a5c 60%, #39BBED 100%);
+    color: white;
+}
+
+.pf-ph--vid4 {
+    background: linear-gradient(135deg, #091929 0%, #1a3666 100%);
+    color: white;
+}
+
+.pf-media-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.pf-media-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.pf-media-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+     
+}
+/* Play button for video */
+.pf-play-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .18);
+    border: 2px solid rgba(255, 255, 255, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(4px);
+    transition: background .3s, transform .25s var(--spring);
+}
+
+.pf-card:hover .pf-play-btn {
+    background: rgba(255, 255, 255, .32);
+    transform: scale(1.12);
+}
+
+/* ── Card overlay tag ── */
+.pf-card-overlay {
+    position: absolute;
+    bottom: .75rem;
+    left: .75rem;
+    z-index: 2;
+}
+
+.pf-overlay-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .62rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, .9);
+    color: var(--wine);
+    padding: 4px 10px;
+    border-radius: var(--r-full);
+    backdrop-filter: blur(6px);
+}
+
+.pf-tag--reel {
+    background: rgba(19, 65, 162, .85);
+    color: white;
+}
+
+/* ── Card Body ── */
+.pf-card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.pf-card-cat {
+    font-size: .62rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--wine);
+}
+
+.pf-card-cat--video {
+    color: var(--blue-mid);
+}
+
+.pf-card-cat--foto {
+    color: var(--blue-light);
+}
+
+.pf-card-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+}
+
+.pf-card-desc {
+    font-size: .8rem;
+    color: var(--soft);
+    line-height: 1.65;
+    font-weight: 300;
+    flex: 1;
+}
+
+.pf-card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: .3rem;
+}
+
+.pf-card-chips span {
+    font-size: .6rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: var(--r-full);
+    background: var(--wine-pale);
+    color: var(--wine);
+    letter-spacing: .04em;
+}
+.pf-media-video {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.pf-media-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── Swiper pagination dots ── */
+.port-pagination {
+    bottom: 0 !important;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 0 5vw;
+}
+
+.port-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: var(--sand);
+    opacity: 1;
+    transition: width .3s var(--ease), background .3s;
+    border-radius: 3px;
+}
+
+.port-pagination .swiper-pagination-bullet-active {
+    width: 22px;
+    background: var(--wine);
 }
 
 /* ================================================================
@@ -1775,13 +2213,21 @@ section {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3rem;
     align-items: start;
     max-width: 1100px;
     margin: 0 auto;
     position: relative;
     z-index: 1
+}
+
+.contact-grid .contact-left {
+    grid-column: span 6;
+}
+
+.contact-grid .contact-form-wrap {
+    grid-column: span 6;
 }
 
 /* Columna izquierda */
@@ -2037,166 +2483,217 @@ section {
 }
 
 /* ================================================================
-   RESPONSIVE
+   RESPONSIVE — SISTEMA 12 COLUMNAS
    ================================================================ */
-@media(max-width:1100px) {
+
+/* ── Tablet (max-width: 1024px) ── */
+@media(max-width:1024px) {
+
+    /* Hero: contenido 12 cols, imagen 12 cols → apilado */
     .hero {
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem
-    }
-
-    .hero-card {
-        width: 260px;
-        height: 340px
-    }
-
-    .hero-frame-bg {
-        width: 260px;
-        height: 340px
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3.5rem
-    }
-
-    .about-left {
-        align-items: center
-    }
-
-    .about-img-wrap {
-        align-self: auto
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem
-    }
-}
-
-@media(max-width:900px) {
-    .port-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-}
-
-@media(max-width:768px) {
-
-    .nav-links,
-    .nav-cta {
-        display: none
-    }
-
-    .nav-hamburger {
-        display: flex
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(12, 1fr);
         padding: 130px 6vw 70px;
-        text-align: center
     }
 
-    .hero-line {
-        display: none
+    .hero-content {
+        grid-column: span 12;
+        text-align: center;
     }
 
-    .hero-visual {
-        display: none
+    .hero .about-left {
+        grid-column: span 12;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-actions,
     .hero-tags,
     .eyebrow {
         justify-content: center;
-        display: flex
+        display: flex;
     }
 
     .hero-sub {
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
     }
 
-    .services-grid,
-    .svc-row2 {
-        grid-template-columns: 1fr
+    /* About: imagen 12, texto 12 */
+    .about-grid .about-left {
+        grid-column: span 12;
+        align-items: center;
+    }
+
+    .about-grid .about-right {
+        grid-column: span 12;
+        padding-left: 0;
+    }
+
+    /* Servicios: cada card 6 cols */
+    .services-grid .svc-card {
+        grid-column: span 6;
+    }
+
+    .svc-row2 .svc-card {
+        grid-column: span 6;
+    }
+
+    /* Skills: cada item 12 cols */
+    .skills-grid .sk-item {
+        grid-column: span 12;
+    }
+
+    /* Portafolio: 2 por fila */
+    .port-grid .proj-card {
+        grid-column: span 6;
+    }
+
+    /* Contacto: apilado */
+    .contact-grid .contact-left {
+        grid-column: span 12;
+    }
+
+    .contact-grid .contact-form-wrap {
+        grid-column: span 12;
+    }
+
+    .hero-card {
+        width: 260px;
+        height: 340px;
+    }
+
+    .hero-frame-bg {
+        width: 260px;
+        height: 340px;
+    }
+
+    .hero-line {
+        display: none;
+    }
+}
+
+/* ── Tablet pequeño (max-width: 900px) ── */
+@media(max-width:900px) {
+    .port-grid .proj-card {
+        grid-column: span 6;
+    }
+}
+
+/* ── Mobile (max-width: 600px) — TODO EN 12 COLUMNAS ── */
+@media(max-width:600px) {
+
+    .nav-links,
+    .nav-cta {
+        display: none;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .hero {
+        background-size: 150px, cover;
+        padding: 120px 5vw 60px;
+    }
+
+    .hero-content {
+        grid-column: span 12;
+    }
+
+    .hero .about-left {
+        grid-column: span 12;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    /* About: todo 12 cols */
+    .about-grid .about-left {
+        grid-column: span 12;
+    }
+
+    .about-grid .about-right {
+        grid-column: span 12;
+    }
+
+    /* Servicios: todo 12 cols */
+    .services-grid .svc-card {
+        grid-column: span 12;
+    }
+
+    .svc-row2 .svc-card {
+        grid-column: span 12;
+    }
+
+    /* Skills: todo 12 cols */
+    .skills-grid .sk-item {
+        grid-column: span 12;
+    }
+
+    /* Portafolio slider: mobile */
+    .port-cat-name {
+        font-size: 1.2rem;
+    }
+
+    .port-cat-count {
+        display: none;
+    }
+
+    .portfolio {
+        padding: 90px 0 100px;
+    }
+
+    /* Contacto: todo 12 cols */
+    .contact-grid .contact-left {
+        grid-column: span 12;
+    }
+
+    .contact-grid .contact-form-wrap {
+        grid-column: span 12;
     }
 
     .about,
     .services,
     .skills,
-    .portfolio,
     .contact {
-        padding: 90px 6vw
+        padding: 90px 6vw;
     }
 
     .footer {
         flex-direction: column;
         gap: .5rem;
-        text-align: center
+        text-align: center;
     }
 
     .sec-title {
-        font-size: 2rem
+        font-size: 2rem;
     }
 
     .form-row {
-        grid-template-columns: 1fr
-    }
-}
-
-@media(max-width:640px) {
-    .port-grid {
-        grid-template-columns: 1fr
-    }
-
-    .proj-card {
-        aspect-ratio: 16/10
-    }
-
-    .proj-overlay {
-        background: linear-gradient(0deg, rgba(14, 26, 43, .82) 0%, transparent 60%);
-        opacity: 1
-    }
-
-    .proj-cat,
-    .proj-title,
-    .proj-btn {
-        transform: translateY(0)
-    }
-
-    .proj-desc {
-        display: none
+        grid-template-columns: 1fr;
     }
 }
 
 @media(max-width:480px) {
     :root {
-        font-size: 15px
+        font-size: 15px;
     }
 
     .hero-name {
-        font-size: 4rem
+        font-size: 4rem;
     }
 
     .about-img-box {
         width: 260px;
-        height: 340px
+        height: 340px;
     }
 
     .about-img-wrap {
-        width: 260px
+        width: 260px;
     }
 
     .about-img-meta {
-        width: 260px
+        width: 260px;
     }
 }
